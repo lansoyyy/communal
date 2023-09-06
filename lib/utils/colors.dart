@@ -1,3 +1,3 @@
 import 'package:flutter/material.dart';
 
-var primary = Colors.amber[800];
+var primary = Colors.green[800];
