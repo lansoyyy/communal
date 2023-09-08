@@ -1,11 +1,20 @@
+import 'package:communal/screens/adminhome_screen.dart';
 import 'package:communal/screens/tabs/aboutus_tab.dart';
 import 'package:communal/screens/tabs/contactus_tab.dart';
 import 'package:communal/screens/tabs/home_tab.dart';
+import 'package:communal/widgets/text_widget.dart';
+import 'package:communal/widgets/textfield_widget.dart';
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  final passController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -43,7 +52,44 @@ class HomeScreen extends StatelessWidget {
                     width: 20,
                   ),
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      showDialog(
+                        context: context,
+                        builder: (context) {
+                          return AlertDialog(
+                            title: TextWidget(
+                              text: 'Enter Admin Password',
+                              fontSize: 18,
+                              fontFamily: 'Bold',
+                            ),
+                            content: SizedBox(
+                              height: 100,
+                              child: TextFieldWidget(
+                                  label: 'Password',
+                                  showEye: true,
+                                  isObscure: true,
+                                  controller: passController),
+                            ),
+                            actions: [
+                              TextButton(
+                                onPressed: () {
+                                  Navigator.of(context).pushReplacement(
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              const AdminHomeScreen()));
+                                },
+                                child: TextWidget(
+                                  text: 'Continue',
+                                  fontSize: 18,
+                                  fontFamily: 'Bold',
+                                  color: Colors.black,
+                                ),
+                              ),
+                            ],
+                          );
+                        },
+                      );
+                    },
                     icon: const Icon(
                       Icons.admin_panel_settings,
                     ),

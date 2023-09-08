@@ -32,6 +32,19 @@ class HomeTab extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(
+                    height: 20,
+                  ),
+                  SizedBox(
+                    width: 300,
+                    child: TextWidget(
+                      text:
+                          '"Welcome to Communical Ranch in Impasugong, Bukidnon! Experience nature and culture like never before. Start your adventure now!"',
+                      fontSize: 14,
+                      fontFamily: 'Regular',
+                      color: Colors.grey,
+                    ),
+                  ),
+                  const SizedBox(
                     height: 30,
                   ),
                   ButtonWidget(
@@ -39,16 +52,6 @@ class HomeTab extends StatelessWidget {
                     color: primary,
                     label: 'Book Now',
                     onPressed: () {},
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  TextWidget(
-                    text:
-                        'Ut quis aliquip nisi ad laborum deserunt ullamco culpa consectetur. Ut quis aliquip nisi ad laborum deserunt ullamco culpa consectetur. Ut quis aliquip nisi ad laborum deserunt ullamco culpa consectetur. Ut quis aliquip nisi ad laborum deserunt ullamco culpa consectetur. Ut quis aliquip nisi ad laborum deserunt ullamco culpa consectetur. Ut quis aliquip nisi ad laborum deserunt ullamco culpa consectetur.',
-                    fontSize: 14,
-                    fontFamily: 'Regular',
-                    color: Colors.grey,
                   ),
                 ],
               ),
