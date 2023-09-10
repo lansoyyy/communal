@@ -9,10 +9,10 @@ class AboutUsTab extends StatelessWidget {
       child: Container(
         width: 600,
         padding: const EdgeInsets.all(20),
-        child: const Column(
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>[
+          children: const <Widget>[
             CircleAvatar(
               radius: 80,
               // Replace with your own image
