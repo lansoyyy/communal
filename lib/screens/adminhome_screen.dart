@@ -1,11 +1,32 @@
+import 'dart:collection';
+
 import 'package:communal/widgets/text_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-class AdminHomeScreen extends StatelessWidget {
+class AdminHomeScreen extends StatefulWidget {
   const AdminHomeScreen({super.key});
 
   @override
+  State<AdminHomeScreen> createState() => _AdminHomeScreenState();
+}
+
+class _AdminHomeScreenState extends State<AdminHomeScreen> {
+  GoogleMapController? mapController;
+
+  void _onMapCreated(GoogleMapController controller) {
+    mapController = controller;
+  }
+
+  late double lat;
+  late double long;
+  Set<Polygon> polygon = HashSet<Polygon>();
+  @override
   Widget build(BuildContext context) {
+    CameraPosition initialCameraPosition = const CameraPosition(
+      target: LatLng(8.308780, 124.985769),
+      zoom: 14,
+    );
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.fromLTRB(30, 20, 30, 20),
@@ -133,13 +154,15 @@ class AdminHomeScreen extends StatelessWidget {
             const SizedBox(
               height: 25,
             ),
-            Card(
-              child: Container(
-                width: double.infinity,
-                height: 375,
-                decoration: const BoxDecoration(
-                  color: Colors.white,
-                ),
+            SizedBox(
+              height: 375,
+              width: double.infinity,
+              child: GoogleMap(
+                zoomControlsEnabled: false,
+                mapType: MapType.hybrid,
+                polygons: polygon,
+                onMapCreated: _onMapCreated,
+                initialCameraPosition: initialCameraPosition,
               ),
             ),
           ],
