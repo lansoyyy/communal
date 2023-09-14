@@ -34,7 +34,7 @@ class _HomeTabState extends State<HomeTab> {
                     height: 150,
                     width: 300,
                     decoration: const BoxDecoration(
-                      color: Colors.grey,
+                      color: Colors.white,
                     ),
                   ),
                   const SizedBox(
@@ -47,7 +47,7 @@ class _HomeTabState extends State<HomeTab> {
                           '"Welcome to Communical Ranch in Impasugong, Bukidnon! Experience nature and culture like never before. Start your adventure now!"',
                       fontSize: 14,
                       fontFamily: 'Regular',
-                      color: Colors.grey,
+                      color: Colors.white,
                     ),
                   ),
                   const SizedBox(
@@ -156,9 +156,9 @@ class _HomeTabState extends State<HomeTab> {
                       height: 60,
                       width: 325,
                       decoration: BoxDecoration(
-                        color: Colors.grey[200],
+                        color: Colors.white,
                         border: Border.all(
-                          color: Colors.grey,
+                          color: Colors.white,
                         ),
                         borderRadius: BorderRadius.circular(5),
                       ),
@@ -172,7 +172,7 @@ class _HomeTabState extends State<HomeTab> {
                               style: const TextStyle(
                                 fontFamily: 'Regular',
                                 fontSize: 16,
-                                color: Colors.grey,
+                                color: Colors.white,
                               ),
                             ),
                             const Expanded(child: SizedBox()),

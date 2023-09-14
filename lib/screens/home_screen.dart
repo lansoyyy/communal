@@ -20,135 +20,146 @@ class _HomeScreenState extends State<HomeScreen> {
     return DefaultTabController(
       length: 3,
       child: Scaffold(
-        body: Padding(
-          padding: const EdgeInsets.fromLTRB(50, 20, 50, 20),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  const SizedBox(
-                    width: 400,
-                    child: TabBar(
-                      labelStyle:
-                          TextStyle(color: Colors.black, fontFamily: 'Bold'),
-                      labelColor: Colors.black,
-                      unselectedLabelColor: Colors.grey,
-                      tabs: [
-                        Tab(
-                          text: 'HOME',
-                        ),
-                        Tab(
-                          text: 'ABOUT US',
-                        ),
-                        Tab(
-                          text: 'CONTACT US',
-                        ),
-                      ],
+        body: Container(
+          decoration: const BoxDecoration(
+            color: Colors.black,
+            image: DecorationImage(
+                opacity: 100,
+                image: AssetImage(
+                  'assets/images/back.jpg',
+                ),
+                fit: BoxFit.cover),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(50, 20, 50, 20),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    const SizedBox(
+                      width: 400,
+                      child: TabBar(
+                        labelStyle:
+                            TextStyle(color: Colors.black, fontFamily: 'Bold'),
+                        labelColor: Colors.black,
+                        unselectedLabelColor: Colors.white,
+                        tabs: [
+                          Tab(
+                            text: 'HOME',
+                          ),
+                          Tab(
+                            text: 'ABOUT US',
+                          ),
+                          Tab(
+                            text: 'CONTACT US',
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                  const SizedBox(
-                    width: 20,
-                  ),
-                  IconButton(
-                    onPressed: () {
-                      showDialog(
-                        context: context,
-                        builder: (context) {
-                          return AlertDialog(
-                            title: TextWidget(
-                              text: 'Enter Admin Password',
-                              fontSize: 18,
-                              fontFamily: 'Bold',
-                            ),
-                            content: SizedBox(
-                              height: 100,
-                              child: TextFieldWidget(
-                                  label: 'Password',
-                                  showEye: true,
-                                  isObscure: true,
-                                  controller: passController),
-                            ),
-                            actions: [
-                              TextButton(
-                                onPressed: () {
-                                  Navigator.of(context).pushReplacement(
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                              const AdminHomeScreen()));
-                                },
-                                child: TextWidget(
-                                  text: 'Continue',
-                                  fontSize: 18,
-                                  fontFamily: 'Bold',
-                                  color: Colors.black,
-                                ),
+                    const SizedBox(
+                      width: 20,
+                    ),
+                    IconButton(
+                      onPressed: () {
+                        showDialog(
+                          context: context,
+                          builder: (context) {
+                            return AlertDialog(
+                              title: TextWidget(
+                                text: 'Enter Admin Password',
+                                fontSize: 18,
+                                fontFamily: 'Bold',
                               ),
-                            ],
-                          );
-                        },
-                      );
-                    },
-                    icon: const Icon(
-                      Icons.admin_panel_settings,
+                              content: SizedBox(
+                                height: 100,
+                                child: TextFieldWidget(
+                                    label: 'Password',
+                                    showEye: true,
+                                    isObscure: true,
+                                    controller: passController),
+                              ),
+                              actions: [
+                                TextButton(
+                                  onPressed: () {
+                                    Navigator.of(context).pushReplacement(
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                const AdminHomeScreen()));
+                                  },
+                                  child: TextWidget(
+                                    text: 'Continue',
+                                    fontSize: 18,
+                                    fontFamily: 'Bold',
+                                    color: Colors.black,
+                                  ),
+                                ),
+                              ],
+                            );
+                          },
+                        );
+                      },
+                      icon: const Icon(
+                        Icons.admin_panel_settings,
+                      ),
                     ),
-                  ),
-                ],
-              ),
-              // Row(
-              //   mainAxisAlignment: MainAxisAlignment.end,
-              //   children: [
-              //     TextButton(
-              //       onPressed: () {},
-              //       child: TextWidget(
-              //         text: 'HOME',
-              //         fontSize: 18,
-              //         fontFamily: 'Bold',
-              //       ),
-              //     ),
-              //     const SizedBox(
-              //       width: 20,
-              //     ),
-              //     TextButton(
-              //       onPressed: () {},
-              //       child: TextWidget(
-              //         text: 'ABOUT US',
-              //         fontSize: 18,
-              //         fontFamily: 'Bold',
-              //       ),
-              //     ),
-              //     const SizedBox(
-              //       width: 20,
-              //     ),
-              //     TextButton(
-              //       onPressed: () {},
-              //       child: TextWidget(
-              //         text: 'CONTACT US',
-              //         fontSize: 18,
-              //         fontFamily: 'Bold',
-              //       ),
-              //     ),
-              //     const SizedBox(
-              //       width: 20,
-              //     ),
-              //     IconButton(
-              //       onPressed: () {},
-              //       icon: const Icon(
-              //         Icons.admin_panel_settings,
-              //       ),
-              //     ),
-              //   ],
-              // ),
+                  ],
+                ),
+                // Row(
+                //   mainAxisAlignment: MainAxisAlignment.end,
+                //   children: [
+                //     TextButton(
+                //       onPressed: () {},
+                //       child: TextWidget(
+                //         text: 'HOME',
+                //         fontSize: 18,
+                //         fontFamily: 'Bold',
+                //       ),
+                //     ),
+                //     const SizedBox(
+                //       width: 20,
+                //     ),
+                //     TextButton(
+                //       onPressed: () {},
+                //       child: TextWidget(
+                //         text: 'ABOUT US',
+                //         fontSize: 18,
+                //         fontFamily: 'Bold',
+                //       ),
+                //     ),
+                //     const SizedBox(
+                //       width: 20,
+                //     ),
+                //     TextButton(
+                //       onPressed: () {},
+                //       child: TextWidget(
+                //         text: 'CONTACT US',
+                //         fontSize: 18,
+                //         fontFamily: 'Bold',
+                //       ),
+                //     ),
+                //     const SizedBox(
+                //       width: 20,
+                //     ),
+                //     IconButton(
+                //       onPressed: () {},
+                //       icon: const Icon(
+                //         Icons.admin_panel_settings,
+                //       ),
+                //     ),
+                //   ],
+                // ),
 
-              Expanded(
-                child: TabBarView(children: [
-                  const HomeTab(),
-                  const AboutUsTab(),
-                  ContactUs(),
-                ]),
-              ),
-            ],
+                Expanded(
+                  child: TabBarView(children: [
+                    const HomeTab(),
+                    const AboutUsTab(),
+                    ContactUs(),
+                  ]),
+                ),
+              ],
+            ),
           ),
         ),
       ),

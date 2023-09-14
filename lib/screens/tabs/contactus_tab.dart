@@ -21,29 +21,50 @@ class ContactUs extends StatelessWidget {
               style: TextStyle(
                 fontSize: 36,
                 fontWeight: FontWeight.bold,
-                color: Colors.blue,
+                color: Colors.white,
               ),
             ),
             const SizedBox(height: 20),
             TextFormField(
+              style: const TextStyle(
+                color: Colors.white,
+              ),
               decoration: const InputDecoration(
+                labelStyle: TextStyle(color: Colors.white),
                 labelText: 'Your Name',
-                prefixIcon: Icon(Icons.person),
+                prefixIcon: Icon(
+                  Icons.person,
+                  color: Colors.white,
+                ),
               ),
             ),
             const SizedBox(height: 20),
             TextFormField(
+              style: const TextStyle(
+                color: Colors.white,
+              ),
               decoration: const InputDecoration(
+                labelStyle: TextStyle(color: Colors.white),
                 labelText: 'Your Email',
-                prefixIcon: Icon(Icons.email),
+                prefixIcon: Icon(
+                  Icons.email,
+                  color: Colors.white,
+                ),
               ),
             ),
             const SizedBox(height: 20),
             TextFormField(
               maxLines: 4,
+              style: const TextStyle(
+                color: Colors.white,
+              ),
               decoration: const InputDecoration(
+                labelStyle: TextStyle(color: Colors.white),
                 labelText: 'Your Message',
-                prefixIcon: Icon(Icons.message),
+                prefixIcon: Icon(
+                  Icons.message,
+                  color: Colors.white,
+                ),
               ),
             ),
             const SizedBox(height: 30),
