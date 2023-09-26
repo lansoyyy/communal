@@ -1,4 +1,6 @@
+import 'package:communal/services/add_booking.dart';
 import 'package:communal/widgets/textfield_widget.dart';
+import 'package:communal/widgets/toast_widget.dart';
 import 'package:flutter/material.dart';
 
 import '../../utils/colors.dart';
@@ -234,6 +236,9 @@ class _HomeTabState extends State<HomeTab> {
             ),
             TextButton(
               onPressed: () {
+                addBooking(nameController.text, numberController.text,
+                    emailController.text, addressController.text, persons);
+                showToast('Added booking! Wait for admins response');
                 Navigator.pop(context);
               },
               child: TextWidget(
