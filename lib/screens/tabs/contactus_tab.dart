@@ -1,3 +1,5 @@
+import 'package:communal/services/add_report.dart';
+import 'package:communal/widgets/toast_widget.dart';
 import 'package:flutter/material.dart';
 
 class ContactUs extends StatelessWidget {
@@ -70,6 +72,9 @@ class ContactUs extends StatelessWidget {
             const SizedBox(height: 30),
             ElevatedButton(
               onPressed: () {
+                addReport(nameController.text, messageController.text,
+                    emailController.text);
+                showToast('Your message was sent!');
                 // Handle form submission here
               },
               style: ButtonStyle(
