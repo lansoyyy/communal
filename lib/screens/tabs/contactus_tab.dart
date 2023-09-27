@@ -28,6 +28,7 @@ class ContactUs extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             TextFormField(
+              controller: nameController,
               style: const TextStyle(
                 color: Colors.white,
               ),
@@ -42,6 +43,7 @@ class ContactUs extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             TextFormField(
+              controller: emailController,
               style: const TextStyle(
                 color: Colors.white,
               ),
@@ -56,6 +58,7 @@ class ContactUs extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             TextFormField(
+              controller: messageController,
               maxLines: 4,
               style: const TextStyle(
                 color: Colors.white,
