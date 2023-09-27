@@ -1,10 +1,12 @@
-import 'package:communal/screens/adminhome_screen.dart';
 import 'package:communal/screens/tabs/aboutus_tab.dart';
 import 'package:communal/screens/tabs/contactus_tab.dart';
 import 'package:communal/screens/tabs/home_tab.dart';
 import 'package:communal/widgets/text_widget.dart';
 import 'package:communal/widgets/textfield_widget.dart';
+import 'package:communal/widgets/toast_widget.dart';
 import 'package:flutter/material.dart';
+
+import 'adminhome_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -83,10 +85,15 @@ class _HomeScreenState extends State<HomeScreen> {
                               actions: [
                                 TextButton(
                                   onPressed: () {
-                                    Navigator.of(context).pushReplacement(
-                                        MaterialPageRoute(
-                                            builder: (context) =>
-                                                const AdminHomeScreen()));
+                                    if (passController.text != 'password123') {
+                                      Navigator.pop(context);
+                                      showToast('Incorrect admin password!');
+                                    } else {
+                                      Navigator.of(context).pushReplacement(
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  const AdminHomeScreen()));
+                                    }
                                   },
                                   child: TextWidget(
                                     text: 'Continue',
