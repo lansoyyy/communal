@@ -1,7 +1,10 @@
 import 'dart:collection';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:communal/utils/colors.dart';
+import 'package:communal/widgets/button_widget.dart';
 import 'package:communal/widgets/text_widget.dart';
+import 'package:communal/widgets/textfield_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
@@ -14,6 +17,9 @@ class AdminHomeScreen extends StatefulWidget {
 
 class _AdminHomeScreenState extends State<AdminHomeScreen> {
   GoogleMapController? mapController;
+
+  final latController = TextEditingController();
+  final longController = TextEditingController();
 
   void _onMapCreated(GoogleMapController controller) {
     mapController = controller;
@@ -453,16 +459,86 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
             const SizedBox(
               height: 25,
             ),
-            SizedBox(
-              height: 375,
-              width: double.infinity,
-              child: GoogleMap(
-                zoomControlsEnabled: false,
-                mapType: MapType.hybrid,
-                polygons: polygon,
-                onMapCreated: _onMapCreated,
-                initialCameraPosition: initialCameraPosition,
-              ),
+            Stack(
+              children: [
+                SizedBox(
+                  height: 375,
+                  width: double.infinity,
+                  child: GoogleMap(
+                    zoomControlsEnabled: false,
+                    mapType: MapType.hybrid,
+                    polygons: polygon,
+                    onMapCreated: _onMapCreated,
+                    initialCameraPosition: initialCameraPosition,
+                  ),
+                ),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Align(
+                      alignment: Alignment.bottomRight,
+                      child: Padding(
+                        padding: const EdgeInsets.only(
+                            bottom: 20, right: 30, top: 20),
+                        child: Container(
+                          width: 300,
+                          height: 250,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(10.0),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                TextFieldWidget(
+                                  controller: latController,
+                                  label: 'Enter latitude',
+                                ),
+                                const SizedBox(
+                                  height: 10,
+                                ),
+                                TextFieldWidget(
+                                  controller: longController,
+                                  label: 'Enter longitude',
+                                ),
+                                const SizedBox(
+                                  height: 20,
+                                ),
+                                ButtonWidget(
+                                  color: primary,
+                                  fontSize: 14,
+                                  height: 40,
+                                  width: 150,
+                                  label: 'Submit',
+                                  onPressed: () {
+                                    mapController!.animateCamera(
+                                      CameraUpdate.newCameraPosition(
+                                        CameraPosition(
+                                          target: LatLng(
+                                              double.parse(latController.text),
+                                              double.parse(
+                                                  longController.text)),
+                                          zoom: 14,
+                                        ),
+                                      ),
+                                    );
+                                  },
+                                ),
+                                const SizedBox(
+                                  height: 20,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
             ),
           ],
         ),
