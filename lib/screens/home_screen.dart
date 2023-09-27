@@ -22,7 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
       child: Scaffold(
         body: Container(
           decoration: const BoxDecoration(
-            color: Colors.black,
+            color: Colors.green,
             image: DecorationImage(
                 opacity: 100,
                 image: AssetImage(

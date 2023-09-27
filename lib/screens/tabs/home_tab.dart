@@ -174,7 +174,7 @@ class _HomeTabState extends State<HomeTab> {
                               style: const TextStyle(
                                 fontFamily: 'Regular',
                                 fontSize: 16,
-                                color: Colors.white,
+                                color: Colors.black,
                               ),
                             ),
                             const Expanded(child: SizedBox()),

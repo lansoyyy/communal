@@ -11,6 +11,7 @@ Future addBooking(name, number, email, address, nums) async {
     'nums': nums,
     'dateTime': DateTime.now(),
     'isSeen': false,
+    'status': 'Pending'
   };
 
   await docUser.set(json);

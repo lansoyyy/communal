@@ -75,6 +75,10 @@ class ContactUs extends StatelessWidget {
                 addReport(nameController.text, messageController.text,
                     emailController.text);
                 showToast('Your message was sent!');
+
+                nameController.clear();
+                messageController.clear();
+                emailController.clear();
                 // Handle form submission here
               },
               style: ButtonStyle(
