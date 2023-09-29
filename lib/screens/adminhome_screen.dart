@@ -51,11 +51,43 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
                   ),
                   child: Padding(
                     padding: const EdgeInsets.only(left: 20, top: 20),
-                    child: TextWidget(
-                      text: 'Admin Dashboard',
-                      fontSize: 28,
-                      fontFamily: 'Bold',
-                      color: Colors.white,
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        TextWidget(
+                          text: 'Admin Dashboard',
+                          fontSize: 28,
+                          fontFamily: 'Bold',
+                          color: Colors.white,
+                        ),
+                        const Expanded(child: SizedBox()),
+                        TextButton.icon(
+                          onPressed: () {},
+                          icon: const Icon(
+                            Icons.add,
+                            color: Colors.white,
+                          ),
+                          label: TextWidget(
+                            text: 'Add Communal Event',
+                            fontFamily: 'Bold',
+                            color: Colors.white,
+                            fontSize: 14,
+                          ),
+                        ),
+                        TextButton.icon(
+                          onPressed: () {},
+                          icon: const Icon(
+                            Icons.add,
+                            color: Colors.white,
+                          ),
+                          label: TextWidget(
+                            text: 'Add Communal Event',
+                            fontFamily: 'Bold',
+                            color: Colors.white,
+                            fontSize: 14,
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ),

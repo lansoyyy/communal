@@ -49,7 +49,7 @@ class _HomeTabState extends State<HomeTab> {
                     width: 300,
                     child: TextWidget(
                       text:
-                          '"Welcome to Communical Ranch in Impasugong, Bukidnon! Experience nature and culture like never before. Start your adventure now!"',
+                          '"EXPERIENCE IMPASUGONG : COMMUNAL RANCH AND TREE PARK WED-BASED BOOKING SYSTEM WITH GPS TRACKER"',
                       fontSize: 14,
                       fontFamily: 'Regular',
                       color: Colors.white,
