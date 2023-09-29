@@ -1,6 +1,8 @@
 import 'package:communal/screens/tabs/aboutus_tab.dart';
+import 'package:communal/screens/tabs/communal_tab.dart';
 import 'package:communal/screens/tabs/contactus_tab.dart';
 import 'package:communal/screens/tabs/home_tab.dart';
+import 'package:communal/screens/tabs/treepark_tab.dart';
 import 'package:communal/widgets/text_widget.dart';
 import 'package:communal/widgets/textfield_widget.dart';
 import 'package:communal/widgets/toast_widget.dart';
@@ -122,8 +124,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 Expanded(
                   child: TabBarView(children: [
                     const HomeTab(),
-                    const SizedBox(),
-                    const SizedBox(),
+                    const CommunalTab(),
+                    const TreeparkTab(),
                     const AboutUsTab(),
                     ContactUs(),
                   ]),
