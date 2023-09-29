@@ -20,7 +20,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 3,
+      length: 5,
       child: Scaffold(
         body: Container(
           decoration: const BoxDecoration(
@@ -41,7 +41,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     const SizedBox(
-                      width: 400,
+                      width: 600,
                       child: TabBar(
                         labelStyle:
                             TextStyle(color: Colors.black, fontFamily: 'Bold'),
@@ -50,6 +50,12 @@ class _HomeScreenState extends State<HomeScreen> {
                         tabs: [
                           Tab(
                             text: 'HOME',
+                          ),
+                          Tab(
+                            text: 'COMMUNAL',
+                          ),
+                          Tab(
+                            text: 'TREE PARK',
                           ),
                           Tab(
                             text: 'ABOUT US',
@@ -113,54 +119,11 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ],
                 ),
-                // Row(
-                //   mainAxisAlignment: MainAxisAlignment.end,
-                //   children: [
-                //     TextButton(
-                //       onPressed: () {},
-                //       child: TextWidget(
-                //         text: 'HOME',
-                //         fontSize: 18,
-                //         fontFamily: 'Bold',
-                //       ),
-                //     ),
-                //     const SizedBox(
-                //       width: 20,
-                //     ),
-                //     TextButton(
-                //       onPressed: () {},
-                //       child: TextWidget(
-                //         text: 'ABOUT US',
-                //         fontSize: 18,
-                //         fontFamily: 'Bold',
-                //       ),
-                //     ),
-                //     const SizedBox(
-                //       width: 20,
-                //     ),
-                //     TextButton(
-                //       onPressed: () {},
-                //       child: TextWidget(
-                //         text: 'CONTACT US',
-                //         fontSize: 18,
-                //         fontFamily: 'Bold',
-                //       ),
-                //     ),
-                //     const SizedBox(
-                //       width: 20,
-                //     ),
-                //     IconButton(
-                //       onPressed: () {},
-                //       icon: const Icon(
-                //         Icons.admin_panel_settings,
-                //       ),
-                //     ),
-                //   ],
-                // ),
-
                 Expanded(
                   child: TabBarView(children: [
                     const HomeTab(),
+                    const SizedBox(),
+                    const SizedBox(),
                     const AboutUsTab(),
                     ContactUs(),
                   ]),
