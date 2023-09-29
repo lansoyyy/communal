@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      title: 'COMMUNAL RANCH BOOKING SYSTEM',
+      title: 'COMMUNAL RANCH & TREE PARK BOOKING SYSTEM',
       home: HomeScreen(),
     );
   }
