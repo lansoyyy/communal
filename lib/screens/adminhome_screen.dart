@@ -1,13 +1,17 @@
 import 'dart:collection';
+import 'dart:html';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:communal/services/add_activity.dart';
 import 'package:communal/utils/colors.dart';
 import 'package:communal/widgets/button_widget.dart';
 import 'package:communal/widgets/text_widget.dart';
 import 'package:communal/widgets/textfield_widget.dart';
+import 'package:communal/widgets/toast_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:intl/intl.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 
 class AdminHomeScreen extends StatefulWidget {
   const AdminHomeScreen({super.key});
@@ -28,6 +32,8 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
 
   late double lat;
   late double long;
+
+  String newUrl = '';
   Set<Polygon> polygon = HashSet<Polygon>();
   @override
   Widget build(BuildContext context) {
@@ -602,14 +608,53 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Container(
-                    width: double.infinity,
-                    color: Colors.black,
-                    height: 150,
-                    child: const Icon(
-                      Icons.add,
-                      color: Colors.white,
-                    ),
+                  GestureDetector(
+                    onTap: () {
+                      InputElement input = FileUploadInputElement()
+                          as InputElement
+                        ..accept = 'image/*';
+                      FirebaseStorage fs = FirebaseStorage.instance;
+                      input.click();
+                      input.onChange.listen((event) {
+                        final file = input.files!.first;
+                        final reader = FileReader();
+                        reader.readAsDataUrl(file);
+                        reader.onLoadEnd.listen((event) async {
+                          var snapshot = await fs
+                              .ref()
+                              .child(DateTime.now().toString())
+                              .putBlob(file);
+                          String downloadUrl =
+                              await snapshot.ref.getDownloadURL();
+                          setState(
+                            () {
+                              newUrl = downloadUrl;
+                            },
+                          );
+                        });
+                      });
+                    },
+                    child: newUrl == ''
+                        ? Container(
+                            width: double.infinity,
+                            color: Colors.black,
+                            height: 150,
+                            child: const Icon(
+                              Icons.add,
+                              color: Colors.white,
+                            ),
+                          )
+                        : Container(
+                            width: double.infinity,
+                            decoration: BoxDecoration(
+                                image: DecorationImage(
+                                    image: NetworkImage(newUrl))),
+                            height: 150,
+                            child: const Icon(
+                              Icons.add,
+                              color: Colors.white,
+                            ),
+                          ),
                   ),
                   const SizedBox(
                     height: 10,
@@ -844,6 +889,14 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
             ),
             TextButton(
               onPressed: () {
+                addActivity(
+                    nameController.text,
+                    descController.text,
+                    newUrl,
+                    dateController.text,
+                    timeController.text,
+                    inCommunal ? 'Communal' : 'Treepark');
+                showToast('Succesfully added an activity!');
                 // addBooking(
                 //     nameController.text,
                 //     numberController.text,
