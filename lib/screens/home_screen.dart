@@ -40,8 +40,14 @@ class _HomeScreenState extends State<HomeScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
+                    Image.asset(
+                      'assets/images/logo.png',
+                      height: 50,
+                      width: 50,
+                    ),
+                    const Expanded(child: SizedBox()),
                     const SizedBox(
                       width: 600,
                       child: TabBar(
