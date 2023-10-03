@@ -52,7 +52,7 @@ class _HomeTabState extends State<HomeTab> {
                           '"EXPERIENCE IMPASUGONG : COMMUNAL RANCH AND TREE PARK WED-BASED BOOKING SYSTEM WITH GPS TRACKER"',
                       fontSize: 14,
                       fontFamily: 'Regular',
-                      color: Colors.white,
+                      color: Colors.black,
                     ),
                   ),
                   const SizedBox(

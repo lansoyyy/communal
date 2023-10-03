@@ -30,9 +30,9 @@ class _HomeScreenState extends State<HomeScreen> {
       child: Scaffold(
         body: Container(
           decoration: const BoxDecoration(
-            color: Colors.green,
+            color: Colors.white,
             image: DecorationImage(
-                opacity: 100,
+                opacity: 200,
                 image: AssetImage(
                   'assets/images/back.jpg',
                 ),
@@ -72,7 +72,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             labelStyle: TextStyle(
                                 color: Colors.black, fontFamily: 'Bold'),
                             labelColor: Colors.black,
-                            unselectedLabelColor: Colors.white,
+                            unselectedLabelColor: Colors.grey,
                             tabs: [
                               Tab(
                                 text: 'HOME',
@@ -192,7 +192,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: TextWidget(
                             text: 'CONTACT US',
                             fontSize: 18,
-                            color: contact ? Colors.white : Colors.black,
+                            color: contact ? Colors.grey : Colors.black,
                             fontFamily: 'Bold',
                           ),
                         ),
@@ -209,7 +209,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: TextWidget(
                             text: 'ABOUT US',
                             fontSize: 18,
-                            color: about ? Colors.white : Colors.black,
+                            color: about ? Colors.grey : Colors.black,
                             fontFamily: 'Bold',
                           ),
                         ),

@@ -57,6 +57,7 @@ class CommunalTab extends StatelessWidget {
                                 image: NetworkImage(
                                   data.docs[index]['img'],
                                 ),
+                                fit: BoxFit.cover,
                               ),
                             ),
                           ),

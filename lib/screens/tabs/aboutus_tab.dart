@@ -9,10 +9,10 @@ class AboutUsTab extends StatelessWidget {
       child: Container(
         width: 600,
         padding: const EdgeInsets.all(20),
-        child: Column(
+        child: const Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
-          children: const <Widget>[
+          children: <Widget>[
             CircleAvatar(
               radius: 80,
               // Replace with your own image
@@ -23,7 +23,7 @@ class AboutUsTab extends StatelessWidget {
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
-                color: Colors.white,
+                color: Colors.black,
               ),
             ),
             SizedBox(height: 10),
@@ -32,7 +32,7 @@ class AboutUsTab extends StatelessWidget {
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 16,
-                color: Colors.white,
+                color: Colors.black,
               ),
             ),
             SizedBox(height: 20),
@@ -41,7 +41,7 @@ class AboutUsTab extends StatelessWidget {
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
-                color: Colors.white,
+                color: Colors.black,
               ),
             ),
             SizedBox(height: 10),
@@ -50,7 +50,7 @@ class AboutUsTab extends StatelessWidget {
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 16,
-                color: Colors.white,
+                color: Colors.black,
               ),
             ),
             SizedBox(height: 20),
@@ -59,7 +59,7 @@ class AboutUsTab extends StatelessWidget {
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
-                color: Colors.white,
+                color: Colors.black,
               ),
             ),
             SizedBox(height: 10),
@@ -68,7 +68,7 @@ class AboutUsTab extends StatelessWidget {
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 16,
-                color: Colors.white,
+                color: Colors.black,
               ),
             ),
           ],

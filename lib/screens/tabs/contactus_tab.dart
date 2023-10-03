@@ -23,21 +23,21 @@ class ContactUs extends StatelessWidget {
               style: TextStyle(
                 fontSize: 36,
                 fontWeight: FontWeight.bold,
-                color: Colors.white,
+                color: Colors.black,
               ),
             ),
             const SizedBox(height: 20),
             TextFormField(
               controller: nameController,
               style: const TextStyle(
-                color: Colors.white,
+                color: Colors.black,
               ),
               decoration: const InputDecoration(
-                labelStyle: TextStyle(color: Colors.white),
+                labelStyle: TextStyle(color: Colors.black),
                 labelText: 'Your Name',
                 prefixIcon: Icon(
                   Icons.person,
-                  color: Colors.white,
+                  color: Colors.black,
                 ),
               ),
             ),
@@ -45,14 +45,14 @@ class ContactUs extends StatelessWidget {
             TextFormField(
               controller: emailController,
               style: const TextStyle(
-                color: Colors.white,
+                color: Colors.black,
               ),
               decoration: const InputDecoration(
-                labelStyle: TextStyle(color: Colors.white),
+                labelStyle: TextStyle(color: Colors.black),
                 labelText: 'Your Email',
                 prefixIcon: Icon(
                   Icons.email,
-                  color: Colors.white,
+                  color: Colors.black,
                 ),
               ),
             ),
@@ -61,14 +61,14 @@ class ContactUs extends StatelessWidget {
               controller: messageController,
               maxLines: 4,
               style: const TextStyle(
-                color: Colors.white,
+                color: Colors.black,
               ),
               decoration: const InputDecoration(
-                labelStyle: TextStyle(color: Colors.white),
+                labelStyle: TextStyle(color: Colors.black),
                 labelText: 'Your Message',
                 prefixIcon: Icon(
                   Icons.message,
-                  color: Colors.white,
+                  color: Colors.black,
                 ),
               ),
             ),
