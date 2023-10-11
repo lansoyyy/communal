@@ -1,3 +1,5 @@
+import 'package:communal/screens/tabs/aboutus_tab.dart';
+import 'package:communal/screens/tabs/contactus_tab.dart';
 import 'package:communal/services/add_booking.dart';
 import 'package:communal/widgets/textfield_widget.dart';
 import 'package:communal/widgets/toast_widget.dart';
@@ -23,51 +25,169 @@ class _HomeTabState extends State<HomeTab> {
     return SizedBox(
       height: 400,
       width: 500,
-      child: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.center,
+      child: SingleChildScrollView(
+        child: Column(
           children: [
-            SizedBox(
-              width: 500,
-              height: 400,
+            Container(
+              width: double.infinity,
+              height: 500,
+              decoration: const BoxDecoration(
+                color: Colors.black,
+              ),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Container(
-                    height: 150,
-                    width: 300,
-                    decoration: const BoxDecoration(
-                      color: Colors.white,
-                    ),
+                  TextWidget(
+                    text: 'Experience Impasugong',
+                    fontSize: 32,
+                    color: Colors.white,
+                    fontFamily: 'Medium',
                   ),
                   const SizedBox(
-                    height: 20,
+                    height: 10,
                   ),
-                  SizedBox(
-                    width: 300,
-                    child: TextWidget(
-                      text:
-                          '"EXPERIENCE IMPASUGONG : COMMUNAL RANCH AND TREE PARK WED-BASED BOOKING SYSTEM WITH GPS TRACKER"',
-                      fontSize: 14,
-                      fontFamily: 'Regular',
-                      color: Colors.black,
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 30,
-                  ),
-                  ButtonWidget(
-                    radius: 100,
-                    color: primary,
-                    label: 'Book Now',
-                    onPressed: () {
-                      bookDialog(context);
-                    },
+                  TextWidget(
+                    text: 'Communal Ranch and Tree Park',
+                    fontSize: 48,
+                    color: Colors.white,
+                    fontFamily: 'Bold',
                   ),
                 ],
               ),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            const Divider(),
+            const SizedBox(
+              height: 10,
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                TextWidget(
+                  text: 'A Full Service Experience',
+                  fontSize: 32,
+                  color: Colors.black,
+                  fontFamily: 'Bold',
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                const Divider(),
+                const SizedBox(
+                  height: 10,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Container(
+                          width: 500,
+                          height: 250,
+                          color: Colors.black,
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        TextWidget(
+                          text: 'Communal Ranch',
+                          fontSize: 28,
+                          color: Colors.black,
+                          fontFamily: 'Bold',
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        SizedBox(
+                          width: 500,
+                          child: TextWidget(
+                            text:
+                                'The communal ranch with the picture perfect landscape, there were many outdoor activities such as camping, horse back riding and etc. this vast  643 hectare grazing land is a haven for both animals and people. As far as the eye can see, lush green pastures stretch out in the distance, dotted with well bred cattle and horse grazers. The ranch features a captivating heart-shaped lake, a part from the mountain backdrop and wildflowers ',
+                            fontSize: 14,
+                            color: Colors.grey,
+                            fontFamily: 'Regular',
+                          ),
+                        ),
+                      ],
+                    ),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Container(
+                          width: 500,
+                          height: 250,
+                          color: Colors.black,
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        TextWidget(
+                          text: 'Treepark',
+                          fontSize: 28,
+                          color: Colors.black,
+                          fontFamily: 'Bold',
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        SizedBox(
+                          width: 500,
+                          child: TextWidget(
+                            text:
+                                'Tree park is the newly open tourist attraction located at Impasugong Bukidnon.The Municipality of Impasugong is strategically located in the north eastern part of the province of Bukidnon. the Municipality is known as the tribal capital of bukidnon and the home of the finest cowboys.The municipal tree park is a 10 hectare area fully planted with different species of trees namely Gemelina,Mahogany, Molave,Lauan and Nara. it has 3 cottages to shelter the visitors with available training center and dormitory',
+                            fontSize: 14,
+                            color: Colors.grey,
+                            fontFamily: 'Regular',
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                const Divider(),
+                const SizedBox(
+                  height: 20,
+                ),
+                TextWidget(
+                  text: 'About Us',
+                  fontSize: 32,
+                  color: Colors.black,
+                  fontFamily: 'Bold',
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                const Divider(),
+                const AboutUsTab(),
+                const SizedBox(
+                  height: 20,
+                ),
+                const Divider(),
+                const SizedBox(
+                  height: 20,
+                ),
+                TextWidget(
+                  text: 'Contact Us',
+                  fontSize: 32,
+                  color: Colors.black,
+                  fontFamily: 'Bold',
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                const Divider(),
+                ContactUs(),
+              ],
             ),
           ],
         ),

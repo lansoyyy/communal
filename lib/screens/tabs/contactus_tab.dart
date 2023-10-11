@@ -18,15 +18,6 @@ class ContactUs extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            const Text(
-              'Contact Us',
-              style: TextStyle(
-                fontSize: 36,
-                fontWeight: FontWeight.bold,
-                color: Colors.black,
-              ),
-            ),
-            const SizedBox(height: 20),
             TextFormField(
               controller: nameController,
               style: const TextStyle(
