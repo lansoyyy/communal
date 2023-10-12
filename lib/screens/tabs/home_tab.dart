@@ -7,7 +7,6 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 import '../../utils/colors.dart';
-import '../../widgets/button_widget.dart';
 import '../../widgets/text_widget.dart';
 
 class HomeTab extends StatefulWidget {
@@ -32,7 +31,9 @@ class _HomeTabState extends State<HomeTab> {
               width: double.infinity,
               height: 500,
               decoration: const BoxDecoration(
-                color: Colors.black,
+                image: DecorationImage(
+                    image: AssetImage('assets/images/home page.jpg'),
+                    fit: BoxFit.cover),
               ),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -90,7 +91,12 @@ class _HomeTabState extends State<HomeTab> {
                         Container(
                           width: 500,
                           height: 250,
-                          color: Colors.black,
+                          decoration: const BoxDecoration(
+                            image: DecorationImage(
+                                image: AssetImage(
+                                    'assets/images/impasugong ranch.jpg'),
+                                fit: BoxFit.cover),
+                          ),
                         ),
                         const SizedBox(
                           height: 10,
@@ -123,7 +129,11 @@ class _HomeTabState extends State<HomeTab> {
                         Container(
                           width: 500,
                           height: 250,
-                          color: Colors.black,
+                          decoration: const BoxDecoration(
+                            image: DecorationImage(
+                                image: AssetImage('assets/images/green.jpg'),
+                                fit: BoxFit.cover),
+                          ),
                         ),
                         const SizedBox(
                           height: 10,

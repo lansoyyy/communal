@@ -1,6 +1,4 @@
-import 'package:communal/screens/tabs/aboutus_tab.dart';
 import 'package:communal/screens/tabs/communal_tab.dart';
-import 'package:communal/screens/tabs/contactus_tab.dart';
 import 'package:communal/screens/tabs/home_tab.dart';
 import 'package:communal/screens/tabs/treepark_tab.dart';
 import 'package:communal/widgets/text_widget.dart';
@@ -44,7 +42,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Image.asset(
-                      'assets/images/logo.png',
+                      'assets/images/logo.jpeg',
                       height: 50,
                       width: 50,
                     ),
