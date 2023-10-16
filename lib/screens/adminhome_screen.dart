@@ -357,9 +357,8 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
                                                             ),
                                                             subtitle:
                                                                 TextWidget(
-                                                              text: data.docs[
-                                                                      index]
-                                                                  ['number'],
+                                                              text:
+                                                                  '${data.docs[index]['number']} - ${data.docs[index]['type']}\nDate and Time: ${data.docs[index]['date']}, ${data.docs[index]['time']}',
                                                               fontSize: 14,
                                                               fontFamily:
                                                                   'Medium',
