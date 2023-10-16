@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-Future addBooking(name, number, email, address, nums, date, time) async {
+Future addBooking(name, number, email, address, nums, date, time, type) async {
   final docUser = FirebaseFirestore.instance.collection('Bookings').doc();
 
   final json = {
@@ -13,7 +13,8 @@ Future addBooking(name, number, email, address, nums, date, time) async {
     'isSeen': false,
     'status': 'Pending',
     'date': date,
-    'time': time
+    'time': time,
+    'type': type
   };
 
   await docUser.set(json);
