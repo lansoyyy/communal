@@ -23,16 +23,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return DefaultTabController(
       length: 3,
       child: Scaffold(
-        body: Container(
-          decoration: const BoxDecoration(
-            color: Colors.white,
-            image: DecorationImage(
-                opacity: 200,
-                image: AssetImage(
-                  'assets/images/back.jpg',
-                ),
-                fit: BoxFit.cover),
-          ),
+        body: SizedBox(
           child: Padding(
             padding: const EdgeInsets.fromLTRB(50, 20, 50, 20),
             child: Column(
