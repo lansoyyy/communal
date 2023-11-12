@@ -35,7 +35,7 @@ class _HomeTabState extends State<HomeTab> {
                   TextWidget(
                     text: 'Experience Impasugong',
                     fontSize: 32,
-                    color: Colors.white,
+                    color: Colors.black,
                     fontFamily: 'Medium',
                   ),
                   const SizedBox(
@@ -44,7 +44,7 @@ class _HomeTabState extends State<HomeTab> {
                   TextWidget(
                     text: 'Communal Ranch and Tree Park',
                     fontSize: 48,
-                    color: Colors.white,
+                    color: Colors.black,
                     fontFamily: 'Bold',
                   ),
                 ],
