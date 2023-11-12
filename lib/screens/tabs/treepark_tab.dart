@@ -241,7 +241,12 @@ class _TreeparkTabState extends State<TreeparkTab> {
 
   int persons = 0;
 
+  bool check1 = false;
+
   bookDialog(context, String type) {
+    setState(() {
+      check1 = false;
+    });
     showDialog(
       context: context,
       builder: (context) {
@@ -582,42 +587,71 @@ class _TreeparkTabState extends State<TreeparkTab> {
                       ),
                     ],
                   ),
+                  Row(
+                    children: [
+                      Checkbox(
+                        value: check1,
+                        onChanged: (value) {
+                          setState(() {
+                            check1 = !check1;
+                          });
+                        },
+                      ),
+                      const SizedBox(
+                        width: 300,
+                        child: Text(
+                          'I agree with terms and conditions',
+                          style: TextStyle(fontFamily: 'Medium'),
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      TextButton(
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        child: TextWidget(
+                          text: 'Close',
+                          fontSize: 14,
+                          fontFamily: 'Medium',
+                        ),
+                      ),
+                      Visibility(
+                        visible: check1,
+                        child: TextButton(
+                          onPressed: () {
+                            addBooking(
+                                nameController.text,
+                                numberController.text,
+                                emailController.text,
+                                addressController.text,
+                                persons,
+                                dateController.text,
+                                timeController.text,
+                                type);
+                            showToast(
+                                'Added booking! Wait for admins response');
+                            Navigator.pop(context);
+                          },
+                          child: TextWidget(
+                            text: 'Add Booking',
+                            fontSize: 14,
+                            fontFamily: 'Medium',
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ],
               ),
             );
           }),
-          actions: [
-            TextButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              child: TextWidget(
-                text: 'Close',
-                fontSize: 14,
-                fontFamily: 'Medium',
-              ),
-            ),
-            TextButton(
-              onPressed: () {
-                addBooking(
-                    nameController.text,
-                    numberController.text,
-                    emailController.text,
-                    addressController.text,
-                    persons,
-                    dateController.text,
-                    timeController.text,
-                    type);
-                showToast('Added booking! Wait for admins response');
-                Navigator.pop(context);
-              },
-              child: TextWidget(
-                text: 'Add Booking',
-                fontSize: 14,
-                fontFamily: 'Medium',
-              ),
-            ),
-          ],
         );
       },
     );
