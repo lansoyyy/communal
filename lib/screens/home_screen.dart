@@ -118,8 +118,53 @@ class _HomeScreenState extends State<HomeScreen> {
                     TreeparkTab(),
                   ]),
                 ),
-                const SizedBox(
-                  height: 50,
+                SizedBox(
+                  height: 100,
+                  child: Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          TextButton.icon(
+                            onPressed: () {},
+                            icon: const Icon(Icons.facebook),
+                            label: TextWidget(
+                              text: 'sample@facebook.com',
+                              fontSize: 18,
+                            ),
+                          ),
+                          TextButton.icon(
+                            onPressed: () {},
+                            icon: const Icon(Icons.g_mobiledata),
+                            label: TextWidget(
+                              text: 'sample@google.com',
+                              fontSize: 18,
+                            ),
+                          ),
+                          TextButton.icon(
+                            onPressed: () {},
+                            icon: const Icon(Icons.phone),
+                            label: TextWidget(
+                              text: '09090104355',
+                              fontSize: 18,
+                            ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 50, right: 50),
+                        child: TextWidget(
+                          text:
+                              'Pariatur Lorem consequat veniam id Lorem ea ea. Sunt exercitation nostrud cillum ad enim ea elit. Aliquip irure irure pariatur laborum labore pariatur et laborum. Consequat minim ea excepteur consectetur cupidatat est duis amet est adipisicing minim ea ut id. Amet consectetur labore nulla quis duis officia est ad. Qui fugiat amet cillum ex tempor labore laborum aliquip nulla. Amet do in velit laboris et laboris sint.',
+                          fontSize: 12,
+                          color: Colors.grey,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ],
             ),
