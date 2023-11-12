@@ -96,7 +96,7 @@ class _CommunalTabState extends State<CommunalTab> {
                     radius: 100,
                     label: 'Book Now',
                     onPressed: () {
-                      bookDialog(context, 'PRENUP');
+                      bookDialog(context, 'PRENUP', 'PRENUP - 2000 PHP');
                     },
                   ),
                 ],
@@ -141,7 +141,7 @@ class _CommunalTabState extends State<CommunalTab> {
                     radius: 100,
                     label: 'Book Now',
                     onPressed: () {
-                      bookDialog(context, 'FARM HOUSE');
+                      bookDialog(context, 'FARM HOUSE', 'FARM HOUSE - 1000 PHP/nigh');
                     },
                   ),
                 ],
@@ -200,7 +200,7 @@ class _CommunalTabState extends State<CommunalTab> {
   int persons = 0;
   bool check1 = false;
 
-  bookDialog(context, String type) {
+  bookDialog(context, String type, String desc) {
     setState(() {
       check1 = false;
     });
@@ -594,7 +594,7 @@ class _CommunalTabState extends State<CommunalTab> {
                                   persons,
                                   dateController.text,
                                   timeController.text,
-                                  type);
+                                  type, desc);
                               showToast(
                                   'Added booking! Wait for admins response');
                               Navigator.pop(context);

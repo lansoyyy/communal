@@ -355,13 +355,32 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
                                                               fontFamily:
                                                                   'Bold',
                                                             ),
-                                                            subtitle:
+                                                            subtitle: Column(
+                                                              crossAxisAlignment:
+                                                                  CrossAxisAlignment
+                                                                      .start,
+                                                              mainAxisAlignment:
+                                                                  MainAxisAlignment
+                                                                      .start,
+                                                              children: [
                                                                 TextWidget(
-                                                              text:
-                                                                  '${data.docs[index]['number']} - ${data.docs[index]['type']}\nDate and Time: ${data.docs[index]['date']}, ${data.docs[index]['time']}',
-                                                              fontSize: 14,
-                                                              fontFamily:
-                                                                  'Medium',
+                                                                  text:
+                                                                      '${data.docs[index]['desc']}',
+                                                                  fontSize: 14,
+                                                                  fontFamily:
+                                                                      'Medium',
+                                                                ),
+                                                                const SizedBox(
+                                                                  height: 5,
+                                                                ),
+                                                                TextWidget(
+                                                                  text:
+                                                                      '${data.docs[index]['number']} - ${data.docs[index]['type']}\nDate and Time: ${data.docs[index]['date']}, ${data.docs[index]['time']}',
+                                                                  fontSize: 14,
+                                                                  fontFamily:
+                                                                      'Medium',
+                                                                ),
+                                                              ],
                                                             ),
                                                             trailing: i == 0
                                                                 ? SizedBox(

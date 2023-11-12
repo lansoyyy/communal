@@ -95,7 +95,8 @@ class _TreeparkTabState extends State<TreeparkTab> {
                     radius: 100,
                     label: 'Book Now',
                     onPressed: () {
-                      bookDialog(context, 'GREEN HOUSE');
+                      bookDialog(context, 'GREEN HOUSE',
+                          'GREEN HOUSE - 1000 PHP/night good for 4-6 person');
                     },
                   ),
                 ],
@@ -139,7 +140,8 @@ class _TreeparkTabState extends State<TreeparkTab> {
                     radius: 100,
                     label: 'Book Now',
                     onPressed: () {
-                      bookDialog(context, 'DUPLEX HOUSE');
+                      bookDialog(context, 'DUPLEX HOUSE',
+                          'DUPLEX HOUSE - 1500 PHP/night good for 6-8 person');
                     },
                   ),
                 ],
@@ -183,7 +185,8 @@ class _TreeparkTabState extends State<TreeparkTab> {
                     radius: 100,
                     label: 'Book Now',
                     onPressed: () {
-                      bookDialog(context, 'DORM HOUSE');
+                      bookDialog(context, 'DORM HOUSE',
+                          'DORM HOUSE - 4000 PHP/night good for 15-20 person');
                     },
                   ),
                 ],
@@ -243,7 +246,7 @@ class _TreeparkTabState extends State<TreeparkTab> {
 
   bool check1 = false;
 
-  bookDialog(context, String type) {
+  bookDialog(context, String type, String desc) {
     setState(() {
       check1 = false;
     });
@@ -634,7 +637,8 @@ class _TreeparkTabState extends State<TreeparkTab> {
                                 persons,
                                 dateController.text,
                                 timeController.text,
-                                type);
+                                type,
+                                desc);
                             showToast(
                                 'Added booking! Wait for admins response');
                             Navigator.pop(context);
