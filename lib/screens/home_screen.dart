@@ -157,8 +157,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       Padding(
                         padding: const EdgeInsets.only(left: 50, right: 50),
                         child: TextWidget(
-                          text:
-                              'Pariatur Lorem consequat veniam id Lorem ea ea. Sunt exercitation nostrud cillum ad enim ea elit. Aliquip irure irure pariatur laborum labore pariatur et laborum. Consequat minim ea excepteur consectetur cupidatat est duis amet est adipisicing minim ea ut id. Amet consectetur labore nulla quis duis officia est ad. Qui fugiat amet cillum ex tempor labore laborum aliquip nulla. Amet do in velit laboris et laboris sint.',
+                          text: 'Copyright 2023. Impasugong Bukidnon',
                           fontSize: 12,
                           color: Colors.grey,
                         ),

@@ -47,6 +47,16 @@ class _HomeTabState extends State<HomeTab> {
                     color: Colors.black,
                     fontFamily: 'Bold',
                   ),
+                  const SizedBox(
+                    height: 5,
+                  ),
+                  TextWidget(
+                    text:
+                        'Sikay  migmugna daw nag duma-duma poon ta tigpandya  daw desinyo Para mag mugna hu lain ha kasulbaran ha hura iling ( mao ni ipuli atong isa ka mission ug vission nga gi buhat nimo ) ',
+                    fontSize: 12,
+                    color: Colors.grey,
+                    fontFamily: 'Medium',
+                  ),
                 ],
               ),
             ),
