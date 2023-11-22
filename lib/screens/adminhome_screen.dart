@@ -116,7 +116,7 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
                                 builder: (BuildContext context,
                                     AsyncSnapshot<QuerySnapshot> snapshot) {
                                   if (snapshot.hasError) {
-                                    print('error');
+                                    print(snapshot.error);
                                     return const Center(child: Text('Error'));
                                   }
                                   if (snapshot.connectionState ==
@@ -291,7 +291,7 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
                                 builder: (BuildContext context,
                                     AsyncSnapshot<QuerySnapshot> snapshot) {
                                   if (snapshot.hasError) {
-                                    print('error');
+                                    print(snapshot.error);
                                     return const Center(child: Text('Error'));
                                   }
                                   if (snapshot.connectionState ==
