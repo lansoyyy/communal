@@ -20,6 +20,8 @@ class TreeparkTab extends StatefulWidget {
 class _TreeparkTabState extends State<TreeparkTab> {
   final dateController = TextEditingController();
   final timeController = TextEditingController();
+  bool gcashSelected = false;
+  bool paymayaSelected = false;
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -612,6 +614,39 @@ class _TreeparkTabState extends State<TreeparkTab> {
                   const SizedBox(
                     height: 10,
                   ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      CheckboxListTile(
+                        title: const Text('GCash'),
+                        value: gcashSelected,
+                        onChanged: (value) {
+                          setState(() {
+                            gcashSelected = value!;
+
+                            if (value) {
+                              paymayaSelected = false;
+                            }
+                          });
+                        },
+                      ),
+                      CheckboxListTile(
+                        title: const Text('PayMaya'),
+                        value: paymayaSelected,
+                        onChanged: (value) {
+                          setState(() {
+                            paymayaSelected = value!;
+                            if (value) {
+                              gcashSelected = false;
+                            }
+                          });
+                        },
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
@@ -638,7 +673,8 @@ class _TreeparkTabState extends State<TreeparkTab> {
                                 dateController.text,
                                 timeController.text,
                                 type,
-                                desc);
+                                desc,
+                                gcashSelected ? 'GCash' : 'PayMaya');
                             showToast(
                                 'Added booking! Wait for admins response');
                             Navigator.pop(context);

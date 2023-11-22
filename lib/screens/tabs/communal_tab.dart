@@ -19,6 +19,9 @@ class CommunalTab extends StatefulWidget {
 
 class _CommunalTabState extends State<CommunalTab> {
   final dateController = TextEditingController();
+
+  bool gcashSelected = false;
+  bool paymayaSelected = false;
   final timeController = TextEditingController();
   @override
   Widget build(BuildContext context) {
@@ -141,7 +144,8 @@ class _CommunalTabState extends State<CommunalTab> {
                     radius: 100,
                     label: 'Book Now',
                     onPressed: () {
-                      bookDialog(context, 'FARM HOUSE', 'FARM HOUSE - 1000 PHP/nigh');
+                      bookDialog(
+                          context, 'FARM HOUSE', 'FARM HOUSE - 1000 PHP/nigh');
                     },
                   ),
                 ],
@@ -569,6 +573,39 @@ class _CommunalTabState extends State<CommunalTab> {
                     const SizedBox(
                       height: 10,
                     ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        CheckboxListTile(
+                          title: const Text('GCash'),
+                          value: gcashSelected,
+                          onChanged: (value) {
+                            setState(() {
+                              gcashSelected = value!;
+
+                              if (value) {
+                                paymayaSelected = false;
+                              }
+                            });
+                          },
+                        ),
+                        CheckboxListTile(
+                          title: const Text('PayMaya'),
+                          value: paymayaSelected,
+                          onChanged: (value) {
+                            setState(() {
+                              paymayaSelected = value!;
+                              if (value) {
+                                gcashSelected = false;
+                              }
+                            });
+                          },
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
@@ -594,7 +631,9 @@ class _CommunalTabState extends State<CommunalTab> {
                                   persons,
                                   dateController.text,
                                   timeController.text,
-                                  type, desc);
+                                  type,
+                                  desc,
+                                  gcashSelected ? 'GCash' : 'PayMaya');
                               showToast(
                                   'Added booking! Wait for admins response');
                               Navigator.pop(context);

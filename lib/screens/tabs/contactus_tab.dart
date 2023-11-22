@@ -6,6 +6,7 @@ class ContactUs extends StatelessWidget {
   final TextEditingController nameController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController messageController = TextEditingController();
+  final TextEditingController numberController = TextEditingController();
 
   ContactUs({super.key});
 
@@ -49,6 +50,21 @@ class ContactUs extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             TextFormField(
+              controller: numberController,
+              style: const TextStyle(
+                color: Colors.black,
+              ),
+              decoration: const InputDecoration(
+                labelStyle: TextStyle(color: Colors.black),
+                labelText: 'Phone Number',
+                prefixIcon: Icon(
+                  Icons.phone,
+                  color: Colors.black,
+                ),
+              ),
+            ),
+            const SizedBox(height: 20),
+            TextFormField(
               controller: messageController,
               maxLines: 4,
               style: const TextStyle(
@@ -67,7 +83,7 @@ class ContactUs extends StatelessWidget {
             ElevatedButton(
               onPressed: () {
                 addReport(nameController.text, messageController.text,
-                    emailController.text);
+                    emailController.text, numberController.text);
                 showToast('Your message was sent!');
 
                 nameController.clear();

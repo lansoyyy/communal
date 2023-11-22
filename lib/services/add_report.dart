@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-Future addReport(name, msg, email) async {
+Future addReport(name, msg, email, number) async {
   final docUser = FirebaseFirestore.instance.collection('Reports').doc();
 
   final json = {
@@ -9,6 +9,7 @@ Future addReport(name, msg, email) async {
     'msg': msg,
     'dateTime': DateTime.now(),
     'isSeen': false,
+    'number': number
   };
 
   await docUser.set(json);
