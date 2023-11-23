@@ -25,7 +25,7 @@ class _HomeTabState extends State<HomeTab> {
               height: 500,
               decoration: const BoxDecoration(
                 image: DecorationImage(
-                    image: AssetImage('assets/images/home page.jpg'),
+                    image: AssetImage('assets/images/home background.jpg'),
                     fit: BoxFit.cover),
               ),
               child: Column(

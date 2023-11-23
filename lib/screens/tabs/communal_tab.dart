@@ -153,6 +153,200 @@ class _CommunalTabState extends State<CommunalTab> {
             ],
           ),
           const SizedBox(
+            height: 10,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Container(
+                    width: 500,
+                    height: 250,
+                    decoration: const BoxDecoration(
+                      image: DecorationImage(
+                          image: AssetImage('assets/images/rrrrrrr.PNG'),
+                          fit: BoxFit.cover),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  TextWidget(
+                    text: 'ENTRANCE',
+                    fontSize: 14,
+                    color: Colors.grey,
+                    fontFamily: 'Regular',
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  TextWidget(
+                    text: '50 PHP',
+                    fontSize: 24,
+                    color: Colors.black,
+                    fontFamily: 'Bold',
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  ButtonWidget(
+                    color: primary,
+                    radius: 100,
+                    label: 'Book Now',
+                    onPressed: () {
+                      bookDialog(context, 'ENTRANCE', 'ENTRANCE - 50 PHP');
+                    },
+                  ),
+                ],
+              ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Container(
+                    width: 500,
+                    height: 250,
+                    decoration: const BoxDecoration(
+                      image: DecorationImage(
+                          image: AssetImage('assets/images/photo shoot.jpg'),
+                          fit: BoxFit.cover),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  TextWidget(
+                    text: 'PHOTOSHOOT',
+                    fontSize: 14,
+                    color: Colors.grey,
+                    fontFamily: 'Regular',
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  TextWidget(
+                    text: '2000 PHP/day',
+                    fontSize: 24,
+                    color: Colors.black,
+                    fontFamily: 'Bold',
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  ButtonWidget(
+                    color: primary,
+                    radius: 100,
+                    label: 'Book Now',
+                    onPressed: () {
+                      bookDialog(
+                          context, 'PHOTOSHOOT', 'PHOTOSHOOT - 2000 PHP/day');
+                    },
+                  ),
+                ],
+              ),
+            ],
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Container(
+                    width: 500,
+                    height: 250,
+                    decoration: const BoxDecoration(
+                      image: DecorationImage(
+                          image: AssetImage('assets/images/filming.jpg'),
+                          fit: BoxFit.cover),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  TextWidget(
+                    text: 'FILMING',
+                    fontSize: 14,
+                    color: Colors.grey,
+                    fontFamily: 'Regular',
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  TextWidget(
+                    text: '10,000 PHP',
+                    fontSize: 24,
+                    color: Colors.black,
+                    fontFamily: 'Bold',
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  ButtonWidget(
+                    color: primary,
+                    radius: 100,
+                    label: 'Book Now',
+                    onPressed: () {
+                      bookDialog(context, 'FILMING', 'FILMING - 10,000 PHP');
+                    },
+                  ),
+                ],
+              ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Container(
+                    width: 500,
+                    height: 250,
+                    decoration: const BoxDecoration(
+                      image: DecorationImage(
+                          image: AssetImage('assets/images/ranch.PNG'),
+                          fit: BoxFit.cover),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  TextWidget(
+                    text: 'COWBOYS QUARTER',
+                    fontSize: 14,
+                    color: Colors.grey,
+                    fontFamily: 'Regular',
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  TextWidget(
+                    text: '2000 PHP/day',
+                    fontSize: 24,
+                    color: Colors.black,
+                    fontFamily: 'Bold',
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  ButtonWidget(
+                    color: primary,
+                    radius: 100,
+                    label: 'Book Now',
+                    onPressed: () {
+                      bookDialog(context, 'COWBOYS QUARTER',
+                          'COWBOYS QUARTER - 2000 PHP/day');
+                    },
+                  ),
+                ],
+              ),
+            ],
+          ),
+          const SizedBox(
             height: 20,
           ),
           const Divider(),
