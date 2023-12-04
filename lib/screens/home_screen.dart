@@ -129,7 +129,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             onPressed: () {},
                             icon: const Icon(Icons.facebook),
                             label: TextWidget(
-                              text: 'sample@facebook.com',
+                              text: 'Impasugong Tourism Office',
                               fontSize: 18,
                             ),
                           ),
@@ -137,7 +137,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             onPressed: () {},
                             icon: const Icon(Icons.g_mobiledata),
                             label: TextWidget(
-                              text: 'sample@google.com',
+                              text: 'lgu.impasugongtourism@gmail.com',
                               fontSize: 18,
                             ),
                           ),
@@ -145,7 +145,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             onPressed: () {},
                             icon: const Icon(Icons.phone),
                             label: TextWidget(
-                              text: '09090104355',
+                              text: '09656735658',
                               fontSize: 18,
                             ),
                           ),
