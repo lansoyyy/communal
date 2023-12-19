@@ -53,7 +53,7 @@ class _HomeTabState extends State<HomeTab> {
                   ),
                   TextWidget(
                     text:
-                        'Sikay  migmugna daw nag duma-duma poon ta tigpandya  daw desinyo Para mag mugna hu lain ha kasulbaran ha hura iling ( mao ni ipuli atong isa ka mission ug vission nga gi buhat nimo ) ',
+                        'Sikay  migmugna daw nag duma-duma poon ta tigpandya  daw desinyo Para mag mugna hu lain ha kasulbaran ha hura iling',
                     fontSize: 12,
                     color: Colors.grey,
                     fontFamily: 'Medium',

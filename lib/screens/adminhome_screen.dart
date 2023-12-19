@@ -2,6 +2,7 @@ import 'dart:collection';
 import 'dart:html';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:communal/screens/home_screen.dart';
 import 'package:communal/services/add_activity.dart';
 import 'package:communal/utils/colors.dart';
 import 'package:communal/widgets/button_widget.dart';
@@ -98,6 +99,56 @@ class _AdminHomeScreenState extends State<AdminHomeScreen> {
                             fontSize: 14,
                           ),
                         ),
+                        IconButton(
+                          onPressed: () {
+                            showDialog(
+                                context: context,
+                                builder: (context) => AlertDialog(
+                                      title: const Text(
+                                        'Logout Confirmation',
+                                        style: TextStyle(
+                                            fontFamily: 'QBold',
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                      content: const Text(
+                                        'Are you sure you want to Logout?',
+                                        style:
+                                            TextStyle(fontFamily: 'QRegular'),
+                                      ),
+                                      actions: <Widget>[
+                                        MaterialButton(
+                                          onPressed: () =>
+                                              Navigator.of(context).pop(true),
+                                          child: const Text(
+                                            'Close',
+                                            style: TextStyle(
+                                                fontFamily: 'QRegular',
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                        ),
+                                        MaterialButton(
+                                          onPressed: () async {
+                                            Navigator.of(context)
+                                                .pushReplacement(
+                                                    MaterialPageRoute(
+                                                        builder: (context) =>
+                                                            const HomeScreen()));
+                                          },
+                                          child: const Text(
+                                            'Continue',
+                                            style: TextStyle(
+                                                fontFamily: 'QRegular',
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                        ),
+                                      ],
+                                    ));
+                          },
+                          icon: const Icon(
+                            Icons.logout,
+                            color: Colors.white,
+                          ),
+                        )
                       ],
                     ),
                   ),
