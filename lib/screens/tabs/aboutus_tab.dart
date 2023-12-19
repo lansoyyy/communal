@@ -16,7 +16,7 @@ class AboutUsTab extends StatelessWidget {
           children: <Widget>[
             const CircleAvatar(
               radius: 80,
-              backgroundImage: AssetImage('assets/images/logo.jpeg'),
+              backgroundImage: AssetImage('assets/images/logo.png'),
               // Replace with your own image
             ),
             const SizedBox(height: 20),
