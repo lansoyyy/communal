@@ -394,6 +394,9 @@ class _CommunalTabState extends State<CommunalTab> {
   final numberController = TextEditingController();
 
   final addressController = TextEditingController();
+  final provinceController = TextEditingController();
+  final munController = TextEditingController();
+  final brgyController = TextEditingController();
 
   int persons = 0;
   bool check1 = false;
@@ -439,8 +442,22 @@ class _CommunalTabState extends State<CommunalTab> {
                       height: 10,
                     ),
                     TextFieldWidget(
-                      label: 'Address',
-                      controller: addressController,
+                      label: 'Province',
+                      controller: provinceController,
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    TextFieldWidget(
+                      label: 'Municipality',
+                      controller: munController,
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    TextFieldWidget(
+                      label: 'Baranggay',
+                      controller: brgyController,
                     ),
                     const SizedBox(
                       height: 10,
@@ -827,7 +844,10 @@ class _CommunalTabState extends State<CommunalTab> {
                                   timeController.text,
                                   type,
                                   desc,
-                                  gcashSelected ? 'GCash' : 'PayMaya');
+                                  gcashSelected ? 'GCash' : 'PayMaya',
+                                  provinceController.text,
+                                  munController.text,
+                                  brgyController.text);
                               showToast(
                                   'Added booking! Wait for admins response');
                               Navigator.pop(context);
