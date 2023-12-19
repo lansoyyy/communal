@@ -354,6 +354,31 @@ class _CommunalTabState extends State<CommunalTab> {
             height: 20,
           ),
           TextWidget(
+            text: '360 View',
+            fontSize: 32,
+            color: Colors.black,
+            fontFamily: 'Bold',
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          const Divider(),
+          const SizedBox(
+            height: 10,
+          ),
+          SizedBox(
+            width: 1000,
+            height: 500,
+            child: Image.asset('assets/images/pano1.jpg'),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          const Divider(),
+          const SizedBox(
+            height: 20,
+          ),
+          TextWidget(
             text: 'About Us',
             fontSize: 32,
             color: Colors.black,
