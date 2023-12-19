@@ -33,7 +33,8 @@ class _HomeTabState extends State<HomeTab> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   TextWidget(
-                    text: 'Experience Impasugong',
+                    text:
+                        'Experience impasugong communal ranch and tree park booking system with virtual tour.',
                     fontSize: 32,
                     color: Colors.black,
                     fontFamily: 'Medium',

@@ -33,7 +33,7 @@ class _CommunalTabState extends State<CommunalTab> {
             height: 500,
             decoration: const BoxDecoration(
               image: DecorationImage(
-                  image: AssetImage('assets/images/impasugong ranch.jpg'),
+                  image: AssetImage('assets/images/new.jpg'),
                   fit: BoxFit.cover),
             ),
           ),
